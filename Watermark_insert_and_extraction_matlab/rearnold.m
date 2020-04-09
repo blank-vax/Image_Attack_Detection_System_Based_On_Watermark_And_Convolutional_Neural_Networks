@@ -1,4 +1,4 @@
-% This part define the implementation details of inverse arnold substitute
+% This part define the implementation details of inverse arnold scrambling
 
 function img = rearnold(arnoldImg,n)
 a=1;

@@ -1,3 +1,4 @@
+# This part implements the details of the complete procedure of generating training set
 '''
 Module name list:
 opencv-python
