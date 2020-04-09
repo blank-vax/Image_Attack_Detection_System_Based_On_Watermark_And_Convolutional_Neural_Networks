@@ -1,4 +1,4 @@
-# Image attack recognition system based on watermark and convolutional neural networks 
+﻿# Image attack recognition system based on watermark and convolutional neural networks 
 ## 0x00 项目相关
 
 ### 项目名称
@@ -41,7 +41,7 @@
 
 #### 嵌入模块
 
-![嵌入过程](C:\Users\B1ank\Desktop\Projects-related\Projects的副本\Watermark&ML\嵌入过程.png)
+![嵌入过程.png-13kB][1]
 
 读取载体图像后提取其中需要操作的数据层,对该数据层进行快速傅立叶变换,取结果后进行水印图像插入,再通过快速傅立叶逆变换实现还原后的图像。
 
@@ -50,6 +50,8 @@
   攻击者可以伪造中心机构进行水印添加，从而发布不具有官方效应的假信息。为了预防这种情况，本项目在水印添加之前对其进行预处理。Arnold 变换具有良好的周期性、编码与解码的特点，在图像传输中可以随机控制变换的次数。利用 Arnold 变换的特性，在图像的置乱处理中已取得有良好的效果，而且在数字水印方面也得到了很好的应用，故选择它作为预处理的方法。
 
   Arnold变换需要用到的三个参数置乱次数、a、b 参数作为信息发布者的专属消息封入黑盒，必须三个参数全部正确才能认证为消息来源是公开信息发布者。对于需要伪造信息的人来说，同时攻破 3 个参数是很难的。这三个参数内置于用户端，从而保证置乱水印的正确还原。
+
+![Arnold.png-134kB][2]
 
 * 水印嵌入
 
@@ -67,7 +69,7 @@
 
 #### 提取识别模块
 
-![提取判断过程](C:\Users\B1ank\Desktop\Projects-related\Projects的副本\Watermark&ML\提取判断过程.png)
+![提取判断过程.png-11.7kB][3]
 
 用户端输入需要识别的图像,该系统读取图像后进行快速傅立叶变换,按照特定算法进行水印提取过程,再通过已经预训练好的模型进行验证分类,输出用户图像相应的信息，判断是否被攻击过，如有则判断受过何种类型的攻击。
 
@@ -80,7 +82,7 @@
 
 * CNN识别模型构建
 
-  ![图片](C:\Users\B1ank\Desktop\Projects-related\图片.png)
+![图片.png-80.4kB][4]
 
 ## 0x01 具体实现
 
@@ -151,3 +153,9 @@
 ## 0x03 项目地址
 
 [Image-attack-detection-system-based-on-watermark-and-convolutional-neural-networks](https://github.com/blank-vax/Image-attack-detection-system-based-on-watermark-and-convolutional-neural-networks)
+
+
+  [1]: http://static.zybuluo.com/B1ank/bgch6ss3t0wmtljuortoa259/%E5%B5%8C%E5%85%A5%E8%BF%87%E7%A8%8B.png
+  [2]: http://static.zybuluo.com/B1ank/p8nw3wqnfbjua8jpqia92a9m/Arnold.png
+  [3]: http://static.zybuluo.com/B1ank/qzqeblj7y5zwipti6bxb8qtb/%E6%8F%90%E5%8F%96%E5%88%A4%E6%96%AD%E8%BF%87%E7%A8%8B.png
+  [4]: http://static.zybuluo.com/B1ank/zowrk3y7bjmej75783saux6i/%E5%9B%BE%E7%89%87.png
